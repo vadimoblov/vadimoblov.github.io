@@ -1,5 +1,4 @@
 <?php
-global $_CORE, $_CONF;
 if(!function_exists('pr')){
    function pr($input){
         echo '<pre>';
@@ -28,7 +27,7 @@ $messageLog = __DIR__ . '/messages.txt';
 $whookExists = json_decode(tlg_curl('getWebhookInfo'), true);
 if($whookExists['ok'] && empty($whookExists['result']['url'])){
     $params = array(
-        'url' => 'https://vmcrm2.dev007.ru/telegrambot/response/',
+        'url' => 'https://vadimoblov.github.io/',
     );
     $setWebhook = tlg_curl('setWebhook', $params);
     //pr($setWebhook);  
@@ -42,7 +41,7 @@ switch ($command){
         $data = file_get_contents('php://input');
         //$data = json_decode($data, true);
         //DOCUMENT_ROOT $_SERVER[]
-        Main::log_message($data, 'telegrambot', 'error');
+        //Main::log_message($data, 'telegrambot', 'error');
         //Main::log_message();
         //file_put_contents($messageLog, print_r($_POST), FILE_APPEND);
         //file_put_contents($messageLog, print_r($_REQUEST), FILE_APPEND);
@@ -53,8 +52,8 @@ switch ($command){
             'one' => 1, 
             'two' => 2);
         $json = json_encode($j);
-        header('Content-Type: application/json; charset=utf-8');
-        print_r($json );
+        //header('Content-Type: application/json; charset=utf-8');
+        //print_r($json );
     break;
     
     default:
