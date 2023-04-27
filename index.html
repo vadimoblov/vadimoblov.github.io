@@ -22,17 +22,17 @@ if(!function_exists('tlg_curl')) {
         return $result;
     }
 }
-$messageLog = __DIR__ . '/messages.txt';
+//$messageLog = __DIR__ . '/messages.txt';
 // /var/www/html/modules/telegrambot/messages.txt
-$whookExists = json_decode(tlg_curl('getWebhookInfo'), true);
-if($whookExists['ok'] && empty($whookExists['result']['url'])){
-    $params = array(
-        'url' => 'https://vadimoblov.github.io/',
-    );
-    $setWebhook = tlg_curl('setWebhook', $params);
-    //pr($setWebhook);  
-}
-pr($whookExists);
+//$whookExists = json_decode(tlg_curl('getWebhookInfo'), true);
+//if($whookExists['ok'] && empty($whookExists['result']['url'])){
+//    $params = array(
+//        'url' => 'https://vadimoblov.github.io/',
+//    );
+//    $setWebhook = tlg_curl('setWebhook', $params);
+//    //pr($setWebhook);  
+//}
+//pr($whookExists);
 exit;
 $command = str_replace('/', '', $Cmd);
 
